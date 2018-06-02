@@ -1,0 +1,91 @@
+<div class="row">
+  <div class="col-md-2 col-sm-2 left-pane">
+    <div class="pane-content">
+      <div ng-click="toggleExpand()" class="profile-info">
+        <img src="../images/profile_avatar_64x64.png">
+        <div>
+          <p class="profile-name">Prashanth Kumar
+            <i class="fas fa-chevron-circle-down"></i>
+          </p>
+          <a href="#">View Details >></a>
+        </div>
+
+      </div>
+      <ul ng-show='infoExpand' class="info-expand">
+        <li>
+          <img src="../images/profile_avatar_64x64.png"> Prashanth Kumar</li>
+        <li>
+          <a href="#">Add your Org</a>
+        </li>
+      </ul>
+      <div class="pro-followers">
+        <ul>
+          <li>0 Followers</li>
+          <li>0 Following</li>
+        </ul>
+      </div>
+      <div class="invite">
+        <a href="#">Invite Friends >></a>
+        <p>Help Build Startup community</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8 col-sm-8 col-xs-12 mid-pane">
+    <div class="container-top">
+      <div class="banner">
+        <div class="row">
+          <div class="col-sm-5 banner-left">
+            <h1 class="banner-head">Ask Me Anything</h1>
+            <p class="banner-text">Ask your questions to founders, influencers and experts in our "Ask me Anything" sessions</p>
+            <button class="btn banner-btn">Learn more about AMA</button>
+          </div>
+          <div class="col-sm-7">
+            <div>
+              <img class="banner-img" src="../images/engage_landing_banner.png">
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <h2 class="ama-title">Upcoming AMA's</h2>
+      <div class="reqSpeaker">
+        <div class="row">
+          <div class="col-sm-5">
+            <h4>Request a Speaker for AMA's</h4>
+          </div>
+          <div class="col-sm-7">
+            <input type="text" class="twitterHandle " placeholder="@twitterhandle">
+            <button class="reqSpeakerbtn btn ">Request Now</button>
+          </div>
+
+        </div>
+        <!-- <div><h3>Request a Speaker for AMA's</h3></div>
+       <div>
+         <input type="search" class="form-control twitterHandle" placeholder="@twitterhandle">
+         <button class="reqSpeakerbtn btn">Request Now</button>
+       </div> -->
+      </div>
+      <h2 class="ama-title">Past AMA's</h2>
+      <speaker-card ng-repeat="s in speakerlist"></speaker-card>
+    </div>
+  </div>
+  <div class="col-sm-2 right-pane">
+    <div>
+      <a href="#" class="fa fa-facebook"></a>
+      <a href="#" class="fa fa-twitter"></a>
+      <a href="#" class="fa fa-linkedin"></a>
+      <a href="#" class="fa fa-envelope"></a>
+    </div>
+    <div class="activity">
+      <h5>Activity</h5>
+      <ul ng-repeat="r in activity">
+        <li>
+          <div>
+            <img src="../images/profile_avatar_64x64.png">
+            <span>{{r.name}}</span> {{r.activity}}</div>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</div>

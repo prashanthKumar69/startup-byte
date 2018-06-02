@@ -1,0 +1,131 @@
+<div class="row">
+  <div class="col-md-2 col-sm-2 left-pane">
+    <div class="pane-content">
+      <div ng-click="toggleExpand()" class="profile-info">
+        <img src="../images/profile_avatar_64x64.png">
+        <div>
+          <p class="profile-name">Prashanth Kumar
+            <i class="fas fa-chevron-circle-down"></i>
+          </p>
+          <a href="#">View Details >></a>
+        </div>
+
+      </div>
+      <ul ng-show='infoExpand' class="info-expand">
+        <li>
+          <img src="../images/profile_avatar_64x64.png"> Prashanth Kumar</li>
+        <li>
+          <a href="#">Add your Org</a>
+        </li>
+      </ul>
+      <div class="pro-followers">
+        <ul>
+          <li>0 Followers</li>
+          <li>0 Following</li>
+        </ul>
+      </div>
+      <div class="invite">
+        <a href="#">Invite Friends >></a>
+        <p>Help Build Startup community</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8 col-sm-8 col-xs-12 mid-pane">
+    <div class="intro-card">
+      <div class="profile-left">
+        <div class="profile-img">
+          <img src="{{currentProfile.img}}">
+        </div>
+        <h4>{{currentProfile.speakerName}}</h4>
+        <div class="soc-media">
+          <a href='{{currentProfile.socMedia.facebook}}'>
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href='{{currentProfile.socMedia.twitter}}'>
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href='{{currentProfile.socMedia.linkedin}}'>
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+      <div class="profile-right">
+        <h2>{{currentProfile.responsibility}}</h2>
+        <div class="profile-tag">
+          <p>#{{currentProfile.skillTag}}</p>
+        </div>
+        <div class="profilePosition">
+          <p>{{currentProfile.position}}</p>
+        </div>
+        <div class="speech-date">
+          <p>{{currentProfile.fromTime}} | {{currentProfile.toTime}}</p>
+        </div>
+        <br>
+        <div class="askQuestionBtn">
+          <button class="btn">Ask Question</button>
+        </div>
+      </div>
+    </div>
+    <div class="about-card">
+      <p class="email-note">
+        <i>Ask your questions rightaway and you will be notified via email as soon as the speaker answers your question</i>
+      </p>
+      <br>
+      <div>
+        <h4>About the Speaker</h4>
+        <p>Hi,</p>
+        <p>{{currentProfile.about}}</p>
+        <br>
+        <h4>Resources</h4>
+        <ul class="resources-list" ng-repeat="r in currentProfile.resources">
+          <li>
+            <a>{{r}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="qnaTab">
+      <ul>
+        <li class="active">
+          <a href='#recentAdded' role="tab" data-toggle="tab">Recently Added</a>
+        </li>
+        <li>
+          <a href='#answered' role="tab" data-toggle="tab">Answered</a>
+        </li>
+        <li>
+          <a href='#unanswered' role="tab" data-toggle="tab">Not Answered</a>
+        </li>
+        <li>
+          <a href='#popular' role="tab" data-toggle="tab">Popular</a>
+        </li>
+      </ul>
+    </div>
+    <div class="qnaContent tab-contents">
+      <div role="tabpanel" class="tab-pane" id="recentAdded">
+
+      </div>
+      <div role="tabpanel" class="tab-pane" id="answered"></div>
+      <div role="tabpanel" class="tab-pane" id="unanswered"></div>
+      <div role="tabpanel" class="tab-pane" id="popular"></div>
+    </div>
+  </div>
+  <div class="col-sm-2 right-pane">
+    <div>
+      <a href="#" class="fa fa-facebook"></a>
+      <a href="#" class="fa fa-twitter"></a>
+      <a href="#" class="fa fa-linkedin"></a>
+      <a href="#" class="fa fa-envelope"></a>
+    </div>
+    <div class="activity">
+      <h5>Activity</h5>
+      <ul ng-repeat="r in activity">
+        <li>
+          <div>
+            <img src="../images/profile_avatar_64x64.png">
+            <span>{{r.name}}</span> {{r.activity}}</div>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</div>
